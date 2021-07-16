@@ -7,7 +7,7 @@ The repository was created by Abhishek Bihani, Hugh Daigle, Javier E. Santos, Ch
 ## Description
 The trained MudrockNet model can be used for detection of pores (green) and large i.e. silt size grains (red) from SEM images of shales or mudrocks. An example is shown in the below image. The original training dataset can be found in [Milliken et al. (2016)]( https://www.digitalrocksportal.org/projects/42), and training images with associated ground truth data (segmented images) are available in [Bihani et al. (2020)]( https://www.digitalrocksportal.org/projects/259)
 
-<img src="https://github.com/abhishekdbihani/MudrockNet/blob/master/images/sem_sample1.5.png" align="middle" width="800" height="900" alt="SEM image: pores and grains" >
+<img src="https://github.com/abhishekdbihani/MudrockNet/blob/main/images/sem_sample1.5.png" align="middle" width="800" height="1000" alt="SEM image: pores and grains" >
 
 Figure 1 shows the overlay mask of ground truth data (A), MudrockNet model predictions (B), and trainable Weka model predictions in ImageJ (C), on four selected SEM images from the test set. The silt grains are in red, pores in green, clay in transparent color, and the truth images show a scale bar for reference. 
  
@@ -49,7 +49,7 @@ Command:
 tensorboard --logdir MODEL_DIR
 ```
 The metrics for training and validation are seen below in Figure 2:
-<img src="https://github.com/abhishekdbihani/MudrockNet/blob/master/images/deeplab_metrics1.png" align="middle" width="600" height="900" alt="SEM image model: metrics" >
+<img src="https://github.com/abhishekdbihani/MudrockNet/blob/main/images/deeplab_metrics1.png" align="middle" width="600" height="1000" alt="SEM image model: metrics" >
 
 MudrockNet was trained on the images using a NVIDIA GeForce GTX 1070 GPU with 8 GB memory. The training was stopped after 50 epochs, once the training and validation loss became constant (values 13.25 and 13.52 respectively), and the training and validation pixel-accuracy reached a plateau (values 0.9205 and 0.8898 respectively).
 
@@ -59,8 +59,9 @@ The MudrockNet model was evaluated for intersection over union (IoU) of differen
 
 | Mean IoU values  | Training | Validation |  Test  |
 |:----------------:|:--------:|:----------:|:-------:
-| Silt grains      |  0.7169  |  0.6443    | 0.6591
-| Pores            |  0.6844  |  0.6744    | 0.6642  
+| Silt grains      |  0.7299  |  0.7070    | 0.6663
+| Clay grains      |  0.8084  |  0.7890    | 0.7797
+| Pores            |  0.6842  |  0.6727    | 0.6751  
 
 Command:
 
@@ -79,13 +80,14 @@ The trainable Weka model using the random forest classifier in ImageJ is uploade
 
 The IoU comparisons with ground truth data for silt and pore values from the MudrockNet and Weka model for images in Figure 1 are given below in Table 2:
 
-|IoU values |	MudrockNet |MudrockNet |Weka       | Weka|
-|:---------:|:----------:|:---------:|:---------:|:----|
-|Image      | Silt grains| Pores     |Silt grains|Pores|
-|1          | 0.892	     | 0.729     |	0.702    |0.581|
-|2          | 0.822	     | 0.655     |	0.665    |0.667|
-|3          | 0.889	     | 0.667     |	0.578    |0.707|
-|4          | 0.881	     | 0.816     |	0.543    |0.497|
+|IoU values |	MudrockNet |MudrockNet  |MudrockNet |Weka       | Weka      | Weka|
+|:---------:|:----------:|:----------:|:---------:|:---------:|:---------:|:----:
+|Image      | Silt grains| Clay Grains|Pores      |Silt grains|Clay Grains| Pores
+|1          | 0.911	     | 0.817      |	0.613     |0.658      |0.614      |0.526
+|2          | 0.880	     | 0.765      |	0.655     |0.637      |0.546      |0.674
+|3          | 0.933	     | 0.789      |	0.764     |0.657      |0.476      |0.625
+|4          | 0.805	     | 0.867      |	0.820     |0.469      |0.400      |0.577
+|5          | 0.195	     | 0.319      |	0.435     |0.554      |0.689      |0.680
 
 
 ## Citation:
