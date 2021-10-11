@@ -93,7 +93,7 @@ The IoU comparisons with ground truth data for silt and pore values from the Mud
 ## Citation:
 
 If you use our model, please cite as:
-Bihani A., Daigle H., Santos J. E., Landry C., Prodanovic M., Milliken K. MudrockNet: Semantic Segmentation of Mudrock SEM Images through Deep learning. Git code (2019) https://github.com/abhishekdbihani/MudrockNet.
+Bihani A., Daigle H., Santos J. E., Landry C., Prodanovic M., Milliken K. (2022). MudrockNet: Semantic Segmentation of Mudrock SEM Images through Deep learning. Computers and Geosciences. https://doi.org/10.1016/j.cageo.2021.104952.
 
 ## Author dataset publications:
 
