@@ -15,14 +15,15 @@ Figure 1 shows the overlay mask of ground truth data (A), MudrockNet model predi
 # Workflow
 
 ## 1) Dataset and MudrockNet model download:
-This repository contains large trained model files which require [LFS](https://git-lfs.github.com/) for downloading. The repository with the trained MudrockNet model and the test images can be downloaded after installing LFS in the folder using following commands. 
+This repository and the model can be downloaded using the following commands. 
 
 Command:
 ```bash
-git lfs install
-
-git lfs clone https://github.com/abhishekdbihani/MudrockNet                                                                                               
+git clone https://github.com/abhishekdbihani/MudrockNet                                                                                               
 ```
+
+Then, download the trained model from [here:](https://drive.google.com/file/d/1Tx5FdE6P6lsx-myb4uvDV_Mh5h38KQvO/view?usp=sharing) 
+
 
 ## 2) Dataset creation: 
 The images ([raw](https://github.com/abhishekdbihani/MudrockNet/tree/master/dataset/data/JPEGImages) + [label/ground truth](https://github.com/abhishekdbihani/MudrockNet/tree/master/dataset/data/SegmentationClassRaw)) need to be converted to TensorFlow TFRecords before conducting training. The images were split randomly into [training, validation and test datasets](https://github.com/abhishekdbihani/MudrockNet/tree/master/dataset/data) in a ratio 70:15:15.
